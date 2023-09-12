@@ -10,23 +10,18 @@ const getPosts = (res) => {
     });
 };
 
-// const createPost = (data, res) => {
-//   console.log(data);
-//   new Models.Post(data)
-//     .save()
-//     .then((data) => res.send({ result: 200, data: data }))
-//     .catch((err) => {
-//       console.log(err);
-//       res.send({ result: 500, error: err.message });
-//     });
-// };
-
 const createPost = (data, res) => {
-  new Models.Post(data).save((err, data) => {
-    if (err) throw err;
-    res.send({ result: 200, data: data });
-  });
+  console.log(data);
+   new Models.Post(data)
+    .save()
+    .then((data) => res.send({ result: 200, data: data }))
+    .catch((err) => {
+      console.log(err);
+      res.send({ result: 500, error: err.message });
+    });
 };
+
+
 
 const updatePost = (req, res) => {
   console.log(req.body);

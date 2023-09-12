@@ -7,8 +7,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/create", (req, res) => {
-  // Controllers.postController.createPost(req.body, res);
-  console.log(req.body)
+  Controllers.postController.createPost(req.body, res);
+  
 });
 
 router.put("/:id", (req, res) => {
