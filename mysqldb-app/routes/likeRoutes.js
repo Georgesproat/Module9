@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const likeController = require("../controllers/likeController");
 
-router.post("/api/posts/:id/like", (req, res) => {
-  likeController.likePost(req, res);
-});
+// Route for liking a post
+router.post("/like", likeController.likePost);
+
+// Route for unliking a post
+router.delete("/unlike", likeController.unlikePost);
 
 module.exports = router;

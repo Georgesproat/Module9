@@ -3,7 +3,6 @@ let dbConnect = require("../dbConnect");
 const sequelizeInstance = dbConnect.Sequelize;
 class Post extends Model {}
 
-//Sequelize will create this table if it doesn't exist on startup
 Post.init(
   {
     id: {
@@ -22,14 +21,13 @@ Post.init(
       allowNull: false,
       required: true
     },
-    userId: {
-      type: DataTypes,
-      INTEGER,
-      references: {
-        model: User,
-        key: "id"
-      }
-    }
+    // userId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id"
+    //   }
+    // }
   },
   {
     sequelize: sequelizeInstance,
